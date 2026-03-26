@@ -186,15 +186,17 @@
   .rad-value { font-family:'VT323',monospace; font-size:2rem; color:var(--green); text-shadow:0 0 10px var(--green-glow); display:block; }
   .rad-label { font-size:0.6rem; letter-spacing:3px; color:rgba(168,245,157,0.4); text-transform:uppercase; }
 
-  /* STATS BAR */
-  .stats-bar {
-    background:rgba(5,15,4,0.9); border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-    padding:20px 40px; display:flex; gap:0; overflow:hidden;
+  /* BIENTOT */
+  .bientot-block {
+    max-width:900px; margin:0 auto; text-align:center;
+    padding:80px 40px; border:1px solid var(--border); background:var(--bg2);
   }
-  .stat-item { flex:1; text-align:center; padding:0 20px; border-right:1px solid var(--border); animation:counter-anim 0.6s ease both; }
-  .stat-item:last-child { border-right:none; }
-  .stat-num { font-family:'VT323',monospace; font-size:2.2rem; color:var(--green); text-shadow:0 0 10px var(--green-glow); display:block; }
-  .stat-label { font-size:0.6rem; letter-spacing:3px; color:rgba(168,245,157,0.4); text-transform:uppercase; }
+  .bientot-title {
+    font-family:'VT323',monospace; font-size:4rem; color:var(--green);
+    text-shadow:0 0 20px var(--green-glow); letter-spacing:8px;
+    animation:pulse-green 4s ease-in-out infinite; margin-bottom:20px;
+  }
+  .bientot-sub { font-size:0.72rem; letter-spacing:4px; color:rgba(168,245,157,0.35); text-transform:uppercase; }
 
   /* SECTIONS */
   section { padding:100px 40px; }
@@ -331,7 +333,6 @@
   <ul class="nav-links">
     <li><a href="#lore">Univers</a></li>
     <li><a href="#features">Gameplay</a></li>
-    <li><a href="#factions">Factions</a></li>
     <li><a href="#serveur">Serveur</a></li>
     <li><a href="gmod-shop.html">Boutique</a></li>
   </ul>
@@ -345,16 +346,8 @@
 <div class="ticker-wrap">
   <div class="ticker-inner">
     <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">ALERTE ROUGE</span> — Zone E contamination critique détectée</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Événement en cours : Tempête de cendres — secteur Nord</span>
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-amber">FACTION</span> — L'Union militaire avance vers les ruines du Parlement</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Mise à jour 4.1 — Système de craft étendu maintenant disponible</span>
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">URGENCE</span> — Bunker B3 sous assaut des mutants</span>
     <span class="ticker-item"><span class="tick-tag">▶</span>Marché noir ouvert — Coordonnées : X:847 Y:203</span>
     <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">ALERTE ROUGE</span> — Zone E contamination critique détectée</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Événement en cours : Tempête de cendres — secteur Nord</span>
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-amber">FACTION</span> — L'Union militaire avance vers les ruines du Parlement</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Mise à jour 4.1 — Système de craft étendu maintenant disponible</span>
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">URGENCE</span> — Bunker B3 sous assaut des mutants</span>
     <span class="ticker-item"><span class="tick-tag">▶</span>Marché noir ouvert — Coordonnées : X:847 Y:203</span>
   </div>
 </div>
@@ -391,55 +384,33 @@
   </svg>
 
   <div class="hero-content">
-    <div class="hero-tag">// GARRY'S MOD — DARKRP APOCALYPSE — SERVEUR FRANÇAIS</div>
+    <div class="hero-tag">// APOCALYPSE RP — SERVEUR FRANÇAIS</div>
     <div class="hero-title">UNION</div>
     <div class="hero-title" style="font-size:clamp(2rem,6vw,4.5rem); margin-bottom:4px; letter-spacing:3px;">APOCALYPSE RP</div>
-    <div class="hero-subtitle">— LA FIN N'EST QUE LE DÉBUT —</div>
+    <div class="hero-subtitle">— l'Union Fait la Force ! —</div>
 
     <p class="hero-desc">
       Bienvenue dans les ruines de la civilisation. L'humanité s'est effondrée, les villes ne sont que cendres et rouille. Rejoins une faction. Forge ton destin dans un monde où chaque décision peut être la dernière.
     </p>
 
-    <div class="alert-banner">
-      <span class="alert-icon">⚠</span>
-      <span class="alert-text">NIVEAU DE MENACE CRITIQUE — SECTEUR OUEST CONTAMINÉ — APPROCHE AVEC EXTRÊME PRÉCAUTION</span>
-    </div>
-
     <div class="rad-meter">
       <div class="rad-item">
-        <span class="rad-value" id="online-count">312</span>
-        <span class="rad-label">Survivants</span>
-      </div>
-      <div class="rad-item">
-        <span class="rad-value">4.1</span>
+        <span class="rad-value">1.0</span>
         <span class="rad-label">Version</span>
       </div>
       <div class="rad-item">
-        <span class="rad-value" id="rad-val">847</span>
-        <span class="rad-label">μSv/h</span>
-      </div>
-      <div class="rad-item">
-        <span class="rad-value">J+<span id="days-c">1247</span></span>
+        <span class="rad-value">J+<span id="days-c">4897</span></span>
         <span class="rad-label">Effondrement</span>
       </div>
     </div>
 
     <div class="hero-btns">
-      <a href="steam://connect/play.union-apr.fr:27015" class="btn-primary">▶ REJOINDRE LE SERVEUR</a>
-      <a href="gmod-shop.html" class="btn-secondary">◈ BOUTIQUE</a>
-      <a href="#" class="btn-secondary">DISCORD</a>
+      <span class="btn-primary">▶ REJOINDRE LE SERVEUR</span>
+      <a href="gmod-shop.html" class="btn-secondary">◈ BOUTIQUE Indisponible</a>
+      <a href="https://discord.gg/qJNhPw3SNh" target="_blank" class="btn-secondary">DISCORD</a>
     </div>
   </div>
 </section>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item" style="animation-delay:0.1s"><span class="stat-num">4</span><span class="stat-label">Factions</span></div>
-  <div class="stat-item" style="animation-delay:0.2s"><span class="stat-num">120+</span><span class="stat-label">Jobs</span></div>
-  <div class="stat-item" style="animation-delay:0.3s"><span class="stat-num">200+</span><span class="stat-label">Items craftables</span></div>
-  <div class="stat-item" style="animation-delay:0.4s"><span class="stat-num">32 km²</span><span class="stat-label">De carte</span></div>
-  <div class="stat-item" style="animation-delay:0.5s"><span class="stat-num">5K+</span><span class="stat-label">Joueurs inscrits</span></div>
-</div>
 
 <!-- LORE -->
 <section id="lore" style="background:rgba(5,15,4,0.4); border-top:1px solid var(--border);">
@@ -447,42 +418,9 @@
     <span class="section-tag">// 01 — Univers & Lore</span>
     <h2 class="section-title">LE MONDE APRÈS</h2>
   </div>
-  <div class="lore-wrap">
-    <div>
-      <div class="lore-terminal">
-        <div class="terminal-header">
-          <div class="terminal-dot t-red"></div>
-          <div class="terminal-dot t-amber"></div>
-          <div class="terminal-dot t-green"></div>
-          <span class="terminal-title">ARCHIVE — DOSSIER_COLLAPSE.LOG</span>
-        </div>
-        <div class="terminal-line"><span class="cmd">$</span> read archive/collapse_event.log</div>
-        <div class="terminal-line" style="color:rgba(168,245,157,0.3);">> Chargement des données...</div>
-        <div class="terminal-line"><span class="cmd">[DATE]</span> &nbsp;<span class="val">14.03.2031 — 03:47:22</span></div>
-        <div class="terminal-line"><span class="cmd">[EVENT]</span> <span class="err">EFFONDREMENT SYSTÉMIQUE GLOBAL</span></div>
-        <div class="terminal-line"><span class="cmd">[CAUSE]</span> Guerre biologique + infrastructure EMP</div>
-        <div class="terminal-line"><span class="cmd">[ZONE]</span> &nbsp;Quarantaine : <span class="val">SECTEUR UNION</span></div>
-        <div class="terminal-line"><span class="cmd">[POP]</span> &nbsp;&nbsp;Survivants estimés : <span class="val">~3,200</span></div>
-        <div class="terminal-line"><span class="cmd">[RAD]</span> &nbsp;&nbsp;<span class="err">CRITIQUE — 847 μSv/h</span></div>
-        <div class="terminal-line"><span class="cmd">[STATUS]</span> <span class="err">GOUVERNEMENT DISSOUS</span></div>
-        <div class="terminal-line"><span class="cmd">[FACT]</span> &nbsp;4 entités actives recensées</div>
-        <div class="terminal-line" style="margin-top:10px;"><span class="cmd">$</span> <span class="terminal-cursor"></span></div>
-      </div>
-    </div>
-    <div>
-      <h3 style="font-family:'VT323',monospace; font-size:2.4rem; color:var(--green); letter-spacing:4px; margin-bottom:20px; text-shadow:0 0 15px rgba(57,255,20,0.4);">BIENVENUE DANS LE SECTEUR UNION</h3>
-      <p style="font-size:0.77rem; line-height:2; color:rgba(168,245,157,0.5); letter-spacing:1px; margin-bottom:20px;">
-        En 2031, une série de catastrophes enchaînées — guerre bactériologique, impulsions électromagnétiques, effondrement des marchés mondiaux — a réduit la civilisation à néant en moins de 72 heures. Ce qu'il reste s'appelle le Secteur Union : une ancienne métropole industrielle envahie par la rouille, les herbes folles et le silence des morts.
-      </p>
-      <div class="lore-quote">
-        "L'Union n'est pas un gouvernement. C'est un serment. Nous survivons ensemble, ou nous disparaissons seuls."
-        <br><span style="color:var(--green-dim); font-size:0.65rem; letter-spacing:3px; font-style:normal; margin-top:8px; display:block;">— COMMANDANT VASEK, FONDATEUR DE L'UNION MILITAIRE</span>
-      </div>
-      <p style="font-size:0.77rem; line-height:2; color:rgba(168,245,157,0.5); letter-spacing:1px; margin-bottom:28px;">
-        Ici, les règles sont celles que tu imposes. Rejoins une faction, bâtis une base, trafique au marché noir ou deviens un nomade solitaire redouté de tous. L'apocalypse n'a pas de scénario — seulement des choix.
-      </p>
-      <a href="#features" class="btn-primary">DÉCOUVRIR LE GAMEPLAY</a>
-    </div>
+  <div class="bientot-block">
+    <div class="bientot-title">BIENTÔT</div>
+    <div class="bientot-sub">// L'univers et le lore arrivent prochainement</div>
   </div>
 </section>
 
@@ -492,43 +430,9 @@
     <span class="section-tag">// 02 — Gameplay</span>
     <h2 class="section-title">MÉCANIQUES DE JEU</h2>
   </div>
-  <div class="features-grid">
-    <div class="feature-card" style="animation-delay:0.1s">
-      <span class="feature-icon">🏭</span>
-      <div class="feature-title">BASE BUILDING</div>
-      <p class="feature-desc">Construis ta forteresse dans les décombres. Système de fortification avancé : bunkers, tourelles automatiques, pièges, générateurs. Défends ton territoire contre les raiders.</p>
-      <span class="feature-tag">SYSTÈME AVANCÉ</span>
-    </div>
-    <div class="feature-card" style="animation-delay:0.2s">
-      <span class="feature-icon">⚗️</span>
-      <div class="feature-title">CRAFT & SURVIE</div>
-      <p class="feature-desc">Plus de 200 recettes de craft. Médicaments, armes improvisées, nourriture, équipements. Gère ta faim, ta soif, ton irradiation et ta fatigue en temps réel.</p>
-      <span class="feature-tag">200+ RECETTES</span>
-    </div>
-    <div class="feature-card" style="animation-delay:0.3s">
-      <span class="feature-icon">🗺️</span>
-      <div class="feature-title">MONDE OUVERT</div>
-      <p class="feature-desc">32 km² de zones explorables : ruines urbaines, forêts mortes, installations militaires abandonnées, égouts souterrains et zones d'exclusion hyper-contaminées.</p>
-      <span class="feature-tag">32 KM² EXPLORABLES</span>
-    </div>
-    <div class="feature-card" style="animation-delay:0.4s">
-      <span class="feature-icon">🎭</span>
-      <div class="feature-title">ROLEPLAY PROFOND</div>
-      <p class="feature-desc">Système de karma et réputation inter-factions. Négociations diplomatiques, trahisons, alliances et contrats en jeu. Le DarkRP comme jamais tu ne l'as vécu.</p>
-      <span class="feature-tag">LORE ÉVOLUTIF</span>
-    </div>
-    <div class="feature-card" style="animation-delay:0.5s">
-      <span class="feature-icon">💀</span>
-      <div class="feature-title">ÉVÉNEMENTS MONDIAUX</div>
-      <p class="feature-desc">Tempêtes de cendres, assauts de mutants, signaux radio mystérieux, convois à intercepter. Des événements scriptés et improvisés bouleversent le monde toutes les heures.</p>
-      <span class="feature-tag">EVENTS QUOTIDIENS</span>
-    </div>
-    <div class="feature-card" style="animation-delay:0.6s">
-      <span class="feature-icon">🔧</span>
-      <div class="feature-title">ÉCONOMIE DYNAMIQUE</div>
-      <p class="feature-desc">Marché noir, troc, contrebande, extraction de ressources rares. L'économie est entièrement player-driven. Les prix fluctuent selon l'offre et la demande réelles.</p>
-      <span class="feature-tag">PLAYER-DRIVEN</span>
-    </div>
+  <div class="bientot-block">
+    <div class="bientot-title">BIENTÔT</div>
+    <div class="bientot-sub">// Les mécaniques de jeu arrivent prochainement</div>
   </div>
 </section>
 
@@ -538,42 +442,9 @@
     <span class="section-tag">// 03 — Factions</span>
     <h2 class="section-title">CHOISIR TON CAMP</h2>
   </div>
-  <div class="factions-grid">
-    <div class="faction-card">
-      <div class="faction-stripe" style="background:linear-gradient(to right,transparent,#39ff14,transparent);"></div>
-      <span class="faction-icon">⚔️</span>
-      <div class="faction-name" style="color:var(--green);">L'UNION MILITAIRE</div>
-      <div class="faction-role">Force d'ordre • Protection • Loi martiale</div>
-      <p class="faction-desc">Anciens soldats et miliciens, ils maintiennent un semblant d'ordre. Accès aux armes lourdes, checkpoints, taxes et droit d'arrestation. La force au service de la survie collective.</p>
-      <div class="faction-bar"><div style="height:100%; width:75%; background:var(--green); box-shadow:0 0 8px var(--green-glow); animation:bar-fill 2s ease both; --fill:75%;"></div></div>
-    </div>
-    <div class="faction-card">
-      <div class="faction-stripe" style="background:linear-gradient(to right,transparent,var(--amber),transparent);"></div>
-      <span class="faction-icon">🔩</span>
-      <div class="faction-name" style="color:var(--amber);">LES RÉCUPÉRATEURS</div>
-      <div class="faction-role">Commerce • Technologie • Neutralité</div>
-      <p class="faction-desc">Marchands et ingénieurs du chaos, ils transforment les débris en ressources. Maîtres du craft avancé et du marché noir, ils vendent à tout le monde — pour le bon prix.</p>
-      <div class="faction-bar"><div style="height:100%; width:60%; background:var(--amber); box-shadow:0 0 8px rgba(255,149,0,0.5); animation:bar-fill 2s ease both; --fill:60%;"></div></div>
-    </div>
-    <div class="faction-card">
-      <div class="faction-stripe" style="background:linear-gradient(to right,transparent,#bf7fff,transparent);"></div>
-      <span class="faction-icon">🩸</span>
-      <div class="faction-name" style="color:#bf7fff;">LES OMBRES</div>
-      <div class="faction-role">Infiltration • Sabotage • Assassinat</div>
-      <p class="faction-desc">Organisation criminelle souterraine opérant dans les égouts et les ruines. Spécialisés dans le vol, l'extorsion et l'élimination discrète. On ne les voit que quand ils le veulent.</p>
-      <div class="faction-bar"><div style="height:100%; width:50%; background:#bf7fff; box-shadow:0 0 8px rgba(191,127,255,0.5); animation:bar-fill 2s ease both; --fill:50%;"></div></div>
-    </div>
-    <div class="faction-card">
-      <div class="faction-stripe" style="background:linear-gradient(to right,transparent,var(--red),transparent);"></div>
-      <span class="faction-icon">☢️</span>
-      <div class="faction-name" style="color:var(--red);">LES NOMADES</div>
-      <div class="faction-role">Survie • Exploration • Indépendance</div>
-      <p class="faction-desc">Solitaires ou en petits groupes, ils ne doivent allégeance à personne. Explorateurs des zones interdites, chasseurs de mutants, ils vivent à la lisière du monde connu.</p>
-      <div class="faction-bar"><div style="height:100%; width:40%; background:var(--red); box-shadow:0 0 8px rgba(255,34,0,0.5); animation:bar-fill 2s ease both; --fill:40%;"></div></div>
-    </div>
-  </div>
-  <div style="text-align:center; margin-top:48px;">
-    <a href="steam://connect/play.union-apr.fr:27015" class="btn-primary">▶ REJOINDRE ET CHOISIR MA FACTION</a>
+  <div class="bientot-block">
+    <div class="bientot-title">BIENTÔT</div>
+    <div class="bientot-sub">// Les factions arrivent prochainement</div>
   </div>
 </section>
 
@@ -583,47 +454,9 @@
     <span class="section-tag">// 04 — Serveur</span>
     <h2 class="section-title">INFORMATIONS</h2>
   </div>
-  <div class="server-info-grid">
-    <div class="info-box">
-      <h3 class="info-box-title">CONNEXION AU SERVEUR</h3>
-      <div class="info-row"><div class="info-key">ADRESSE IP</div><div class="info-val hi">play.union-apr.fr:27015</div></div>
-      <div class="info-row"><div class="info-key">GAMEMODE</div><div class="info-val">DARKRP — APOCALYPSE-RP v4.1</div></div>
-      <div class="info-row"><div class="info-key">MAP</div><div class="info-val">rp_apocalypse_union_v3</div></div>
-      <div class="info-row"><div class="info-key">SLOTS</div><div class="info-val hi">128 JOUEURS</div></div>
-      <div class="info-row"><div class="info-key">LOCALISATION</div><div class="info-val">FRANCE — OVH ROUBAIX</div></div>
-      <a href="steam://connect/play.union-apr.fr:27015" class="btn-primary" style="display:block; text-align:center; width:100%; margin-top:28px;">CONNEXION DIRECTE STEAM</a>
-    </div>
-    <div class="info-box">
-      <h3 class="info-box-title">ÉTAT DU SERVEUR</h3>
-      <div class="prog-row">
-        <div class="prog-label"><span class="prog-name">OCCUPATION</span><span class="prog-val">78%</span></div>
-        <div class="prog-track"><div class="prog-fill" style="--fill:78%; width:78%;"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span class="prog-name">STABILITÉ</span><span class="prog-val">98%</span></div>
-        <div class="prog-track"><div class="prog-fill" style="--fill:98%; width:98%;"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span class="prog-name">TICK RATE</span><span class="prog-val">66 Hz</span></div>
-        <div class="prog-track"><div class="prog-fill" style="--fill:66%; width:66%;"></div></div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-label"><span class="prog-name">LATENCE MOY.</span><span class="prog-val">18ms</span></div>
-        <div class="prog-track"><div class="prog-fill" style="--fill:90%; width:90%;"></div></div>
-      </div>
-      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
-        <div class="info-key" style="margin-bottom:10px;">ÉVÉNEMENT EN COURS</div>
-        <div style="display:flex; align-items:center; gap:12px; animation:alert-pulse 3s ease-in-out infinite; border:1px solid rgba(255,149,0,0.3); background:rgba(255,149,0,0.05); padding:12px;">
-          <span style="color:var(--amber); animation:blink 1s step-start infinite;">◈</span>
-          <span style="font-size:0.68rem; letter-spacing:2px; color:rgba(255,200,80,0.8);">TEMPÊTE DE CENDRES — SECTEUR NORD — <span id="etimer">00:47:13</span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="info-cards">
-    <div class="info-card"><span class="info-card-icon">🛡️</span><div class="info-card-title">ANTI-CHEAT</div><p class="info-card-text">Système anti-cheat maison couplé à VAC. Admins actifs 7j/7 et surveillance automatisée en temps réel.</p></div>
-    <div class="info-card"><span class="info-card-icon">⚡</span><div class="info-card-title">MISES À JOUR</div><p class="info-card-text">Patches hebdomadaires, événements mensuels, extensions de map et nouvelles factions en développement permanent.</p></div>
-    <div class="info-card"><span class="info-card-icon">🎙️</span><div class="info-card-title">COMMUNAUTÉ</div><p class="info-card-text">Plus de 5 000 joueurs inscrits. Discord actif, forums RP, classements, événements staff et concours de construction.</p></div>
+  <div class="bientot-block">
+    <div class="bientot-title">PROCHAINEMENT</div>
+    <div class="bientot-sub">// Les informations serveur arrivent prochainement</div>
   </div>
 </section>
 
@@ -631,10 +464,10 @@
 <section style="background:rgba(5,15,4,0.4); border-top:1px solid var(--border); padding:80px 40px; text-align:center;">
   <span class="section-tag" style="margin-bottom:16px;">// 05 — Boutique</span>
   <div style="font-family:'VT323',monospace; font-size:3.5rem; color:var(--green); text-shadow:0 0 20px var(--green-glow); letter-spacing:6px; margin-bottom:20px; animation:pulse-green 4s ease-in-out infinite;">AVANTAGE EN JEU</div>
-  <p style="max-width:560px; margin:0 auto 40px; font-size:0.78rem; line-height:1.9; color:rgba(168,245,157,0.45); letter-spacing:1px;">
-    Équipements rares, grades VIP, kits de survie et véhicules blindés. Donne-toi les moyens de survivre dans le Secteur Union. Paiement sécurisé, livraison instantanée.
-  </p>
-  <a href="gmod-shop.html" class="btn-primary" style="font-size:1rem; padding:18px 60px; letter-spacing:6px;">◈ ACCÉDER À LA BOUTIQUE</a>
+  <div class="bientot-block" style="margin-top:0;">
+    <div class="bientot-title">PROCHAINEMENT</div>
+    <div class="bientot-sub">// La boutique ouvre prochainement</div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -642,12 +475,9 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <span class="logo-text">U·A·R·P</span>
-      <p class="footer-desc">Union Apocalypse RP est un serveur Garry's Mod DarkRP post-apocalyptique français. Immersion totale, roleplay sérieux, communauté active depuis 2022.</p>
+      <p class="footer-desc">Union Community est une Communauté française. Notre but : Immersion totale, roleplay sérieux, communauté existante depuis 2022.</p>
       <div class="footer-socials">
-        <a class="social-btn" href="#">DC</a>
-        <a class="social-btn" href="#">ST</a>
-        <a class="social-btn" href="#">YT</a>
-        <a class="social-btn" href="#">TW</a>
+        <a class="social-btn" href="https://discord.gg/qJNhPw3SNh" target="_blank">DISCORD</a>
       </div>
     </div>
     <div class="footer-col">
@@ -694,36 +524,15 @@
   setInterval(() => {
     base += Math.floor(Math.random() * 7) - 3;
     base = Math.max(260, Math.min(380, base));
-    const el = document.getElementById('online-count');
     const nav = document.getElementById('online-nav');
-    if (el) el.textContent = base;
     if (nav) nav.textContent = base + ' SURVIVANTS EN LIGNE';
   }, 5000);
 
-  // Radiation fluctuation
-  let rad = 847;
-  setInterval(() => {
-    rad += Math.floor(Math.random() * 20) - 10;
-    rad = Math.max(780, Math.min(920, rad));
-    const el = document.getElementById('rad-val');
-    if (el) el.textContent = rad;
-  }, 3000);
-
   // Days since collapse
-  const startDate = new Date('2031-03-14');
+  const startDate = new Date('2020-03-14');
   const daysDiff = Math.floor((new Date() - startDate) / 86400000);
   const dcEl = document.getElementById('days-c');
   if (dcEl) dcEl.textContent = daysDiff > 0 ? daysDiff : 1247;
-
-  // Event timer
-  let secs = 47 * 60 + 13;
-  setInterval(() => {
-    if (--secs < 0) secs = 60 * 60 + Math.floor(Math.random() * 1800);
-    const m = String(Math.floor(secs / 60)).padStart(2, '0');
-    const s = String(secs % 60).padStart(2, '0');
-    const el = document.getElementById('etimer');
-    if (el) el.textContent = '00:' + m + ':' + s;
-  }, 1000);
 </script>
 </body>
 </html>
