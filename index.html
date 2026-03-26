@@ -519,13 +519,11 @@
 </footer>
 
 <script>
-  // Online counter
-  let base = 312;
   setInterval(() => {
     base += Math.floor(Math.random() * 7) - 3;
     base = Math.max(260, Math.min(380, base));
     const nav = document.getElementById('online-nav');
-    if (nav) nav.textContent = base + ' SURVIVANTS EN LIGNE';
+    if (nav) nav.textContent = base + ' En Développement';
   }, 5000);
 
   // Days since collapse
