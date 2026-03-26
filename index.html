@@ -109,7 +109,7 @@
   .hero {
     position:relative; min-height:100vh;
     display:flex; align-items:center; justify-content:center;
-    overflow:hidden; padding-top:110px;
+    overflow:hidden; padding-top:80px;
   }
   .hero-bg {
     position:absolute; inset:0;
@@ -337,20 +337,12 @@
     <li><a href="gmod-shop.html">Boutique</a></li>
   </ul>
   <div class="nav-status">
-    <div class="status-dot"></div>
-    <span id="online-nav">312 SURVIVANTS EN LIGNE</span>
+    <div class="status-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber);"></div>
+    <span style="color:var(--amber);letter-spacing:3px;">EN DÉVELOPPEMENT</span>
   </div>
 </nav>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-inner">
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">ALERTE ROUGE</span> — Zone E contamination critique détectée</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Marché noir ouvert — Coordonnées : X:847 Y:203</span>
-    <span class="ticker-item"><span class="tick-tag">⚠</span><span class="tick-red">ALERTE ROUGE</span> — Zone E contamination critique détectée</span>
-    <span class="ticker-item"><span class="tick-tag">▶</span>Marché noir ouvert — Coordonnées : X:847 Y:203</span>
-  </div>
-</div>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -519,11 +511,13 @@
 </footer>
 
 <script>
+  // Online counter
+  let base = 312;
   setInterval(() => {
     base += Math.floor(Math.random() * 7) - 3;
     base = Math.max(260, Math.min(380, base));
     const nav = document.getElementById('online-nav');
-    if (nav) nav.textContent = base + ' En Développement';
+    if (nav) nav.textContent = base + ' SURVIVANTS EN LIGNE';
   }, 5000);
 
   // Days since collapse
